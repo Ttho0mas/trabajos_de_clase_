@@ -1,0 +1,153 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F5A8;
+}
+
+header {
+    background-color: #81A263;
+    color: #597445;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #BACD92;
+    text-decoration: none;
+   
+}
+ 
+
+div {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+div p {
+    margin-bottom: 20px;
+    text-indent: 30px;
+    position: relative;
+}
+
+footer {
+    background-color: #81A263;
+    color: #BACD92;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+footer a {
+    color: #BACD92;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/*pseudo-clases y pseudo-elementos🦖*/
+
+/*🅐 Cambia el color del texto de los enlaces en el menú de navegación cuando el cursor pasa sobre ellos.*/
+/*🅚 Implementa una transición suave en los colores de los enlaces del menú de navegación al pasar el cursor sobre ellos.*/
+
+nav ul li a:hover {
+    color: #F3CA52;
+    transition: color 0.3s;
+}
+
+/*🅑 Aplica un estilo especial al primer párrafo del artículo.*/
+div p:first-of-type {
+    font-style: italic;
+    font-weight: lighter;
+    color: #F3CA52;
+}
+
+/*🅒 Implementa Letra Capital en cáda párrafo.*/
+div p:first-letter {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/*🅓 Muestra los enlaces del menú de navegación con un color diferente cuando han sido visitados.*/
+nav ul li a:visited  {
+    color: #F7D08A;
+  
+}
+
+/*🅔 Aplica un color de fondo al tercer elemento del menú y otro a todos los párrafos impares de la sección principal.*/
+nav ul li:nth-child(3) {
+    background-color: #A09F57; 
+    padding: 5px 10px;
+}
+
+div p:nth-of-type(odd) {
+    background-color: #A09F57;
+    padding: 5px;
+}
+
+/*🅕 Resalta el enlace del pie de página cuando está en foco.*/
+footer a:focus {
+    outline: 2px solid #597445; 
+}
+
+
+/*🅖 Utiliza un pseudoelemento para agregar un emoji antes del texto de cada enlace en el menú de navegación.*/
+nav ul li a:before {
+    content: "↪ ";
+}
+
+/*🅗 Añade un ícono decorativo después del título en el encabezado.*/
+h1::after{
+    content: "⁛";
+    color: #597445;
+    margin: 0 5px;
+}
+
+
+/*🅘 Aplícale estilo a la primera letra del primer párrafo del artículo (además de Capital).*/
+div p:first-of-type::first-letter {
+    font-size: 3em;
+     color: #597445; 
+}
+
+
+/*🅙 Añade contenido decorativo al principio y al final del pie de página.*/
+footer:before{
+    content: "(o゜▽゜)o☆";
+    display: inline-block;
+    color: gold;
+    margin: 0 5px;
+}
+ footer:after {
+    content: "☆o(o゜▽゜)";
+    display: inline-block;
+    color: gold;
+    margin: 0 5px;
+}
+
+
+/*🅚 Implementa una transición suave en los colores de los enlaces del menú de navegación al pasar el cursor sobre ellos.*/
+header:hover {
+    transition: color 0.3s;
+}

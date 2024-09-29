@@ -1,0 +1,71 @@
+html,body{
+    margin: 0;
+    text-align: center;
+    height:100%;
+}
+
+h1{
+    font-weight: bold;
+    background: linear-gradient(to right, red, red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#contenedor{
+    background: linear-gradient(180deg, rgba(255,82,82,1) 0%, rgba(255,167,72,1) 13%, rgba(255,225,120,1) 19%, rgba(150,255,134,1) 33%, rgba(87,255,250,1) 56%, rgba(67,168,197,1) 68%, rgba(105,146,239,1) 75%, rgba(96,107,224,1) 81%, rgba(108,81,193,1) 91%, rgba(251,112,255,1) 98%);
+    padding: 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    row-gap: 15px;
+    column-gap: 20px;
+}
+
+#contenedor .contpeli{
+    color: black;
+    background: rgb(154,208,236);
+    background: linear-gradient(0deg, rgba(154,208,236,1) 0%, rgba(130,193,229,1) 27%, rgba(85,166,215,1) 77%, rgba(64,154,209,1) 100%);
+    border-radius: 0 0 16px 16px;
+    border: white solid 4px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 145px;
+    height:260px;
+}
+
+#contenedor .contpeli img{
+    border-radius: 0 0 16px 16px;
+    width:130px;
+    height:220px;
+
+}
+
+#contenedor a:hover .contpeli  {
+    width: 180px;
+    height: 300px;
+    
+
+}
+#contenedor a:hover .contpeli img {
+    width: 160px;
+    height: 240px;
+    
+
+}
+a{
+    text-decoration: none;
+    
+}
+.contpeli h2{
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.contpeli p{
+    font-size: 10px;
+    margin: 0px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>😺Texto a Voz</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>LECTOR DE TEXTO A VOZ:</h1>
+
+        <textarea id="texto" placeholder="Ingrese el texto a leer aqui o(〃＾▽＾〃)o"></textarea>
+        
+        <div class="controles">
+            <label for="volumen">Volumen:</label>
+            <input type="range" id="volumen" min="0" max="1" step="0.1" value="1">
+        </div>
+
+        <div class="controles">
+            <label for="velocidad">Velocidad:</label>
+            <input type="range" id="velocidad" min="0.1" max="10" step="0.1" value="1">
+        </div>
+
+        <div class="controles">
+            <label for="tono">Tono:</label>
+            <input type="range" id="tono" min="0" max="2" step="0.1" value="1">
+        </div>
+
+        <div class="controles">
+            <label for="voz">Voz:</label>
+            <select id="voz"></select>
+        </div>
+
+        <button id="leer">Leer el texto</button>
+
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

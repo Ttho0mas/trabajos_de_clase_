@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link href="estiloCalculadora.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="jsCalculadora.js" type="module" ></script>
+ 
+</head>
+
+<body>
+  <div id="calculadora">
+   
+      <h1 >CALCULADORA:</h1>
+      <input type="text" class="resultado" id="pantalla" name="pantalla">
+   
+    <table id="teclado">
+      <tr>
+        <td>
+          <input type="button" class='numero' onclick="agregar(1)" value="1">
+          <input type="button" class='numero' onclick="agregar(2)" value="2">
+          <input type="button" class='numero' onclick="agregar(3)" value="3">
+          <input type="button" class="suma" onclick="operacion('+')" value="+">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" class='numero' onclick="agregar(4)" value="4">
+          <input type="button" class='numero' onclick="agregar(5)" value="5">
+          <input type="button" class='numero' onclick="agregar(6)" value="6">
+          <input type="button" class="resta" onclick="operacion('-')" value="-">
+        </td>
+      </tr>
+     
+      <tr>
+        <td>
+          <input type="button" class='numero' onclick="agregar(7)" value="7">
+          <input type="button" class='numero' onclick="agregar(8)" value="8">
+          <input type="button" class='numero' onclick="agregar(9)" value="9">
+          <input type="button" class="multiplicacion" onclick="operacion('*')" value="x">
+        </td>
+      </tr>
+     
+      <tr>
+        <td>
+          <input type="button" class='numero' onclick="agregar(0)" value="0">
+          <input type="button" class="raiz" onclick="calcularRaiz()" value="√">
+          <input type="button" class="cuadrado" onclick="calcularCuadrado()" value="x²">
+          <input type="button" class="division" id="division" onclick="operacion('/')" value="÷">
+        
+        </td>
+      </tr>
+      <tr>
+      <td>
+        <input type="button" value="👾">
+        <input type="button" class="botontemval" id="punto" onclick="punto()" value=".">
+        <input type="button" class="limpiar" id="botonC" onclick="borrar(0)" value="C">
+        <input type="button" class="igual" onclick='calcular()' value="=">
+        
+      </td></tr>
+    </table>
+  </div>
+  
+</body>
+
+
+</html>
+

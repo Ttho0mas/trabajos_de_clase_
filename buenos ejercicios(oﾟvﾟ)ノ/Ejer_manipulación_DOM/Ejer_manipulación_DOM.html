@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios sobre manipulación del DOM:</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<div class="cont-pagina">
+<h1>Ejercicios sobre manipulación del DOM</h1>
+<div  class="pruebasapo">
+<ul>
+<li>Hola</li>
+<li>hoala</li>
+<li>jdjd</li>
+<li>njjdjd</li>
+<li>hjjdj</li>
+</ul>
+</div>
+<h2>A.Crear un programa que cambia el texto de un párrafo al hacer clic en un botón. </h2>
+    <p id="parrafos">Al tocar el boton "Cambiar texto-contenido " el contenido del texto cambiara a otro </p>
+    <button  onclick="cambiarTexto()" >Cambiar texto-contenido  </button>
+
+
+<h2>B. Cambiar el color de fondo de un "div" al pasar el ratón sobre él.</h2>
+    <div id="eldiv" onmouseover="cambiarColor()" onmouseout="restaurarColor()" >Al pasar el mouse por aqui el color cambiara 🧙‍♂️</div>
+
+
+
+<h2>C. Añadir un nuevo elemento a una lista "ul" al hacer clic en un botón.</h2>
+
+    <ul id="lalista">
+        <li>🍋🍊🍅</li>
+        <li>🥭🍎🍊</li>
+        <li>🍋🍅🥭</li>
+    </ul>
+    
+    <button onclick="anadirElemento()">Añadir Elemento</button>
+
+<h2>D. Mostrar u ocultar un párrafo al hacer clic en un botón.</h2>
+   
+    <p id="parrafosD">Al tocar el boton "Mostrar/Ocultar" el parrafo se muestra o oculta dependiendo como este inicialmente 🧙‍♂️</p>
+    <button onclick="modificarParrafoD()">Mostrar/Ocultar</button>
+
+<h2>E. Actualizar el valor de un campo de entrada "input" con el texto de un párrafo al hacer clic en un botón.</h2>
+
+    <p id="parrafosE"> Al tocar el boton "Actualizar contenido" se actualizara o moficara el contenido del input por el texto de este parrafo</p>
+    <input type="text" id="elinput"> 
+    <br>
+    <button onclick="actualizarInput()">Actualizar contenido</button>
+
+<h2>F. Crear una capa con varias imágenes dentro, obtener mediante JavaScript dicha capa y mediante ella acceder a todos sus hijos y mostrar todas las URLs de las imágenes mencionadas en varios alert().</h2>
+    <div id="lacapa">
+        <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/083.png" alt="Farfetch’d">
+        <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/086.png" alt="Seel">
+        <img src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/094.png" alt="Gengar">
+    </div>
+    <button onclick="mostrarURLs()">Mostrar URLs</button>
+
+<h2>G. Acceder a todos los "input" de un formulario y a los de tipo "text" agregarles la clase "destacado", la que debe agregarles un borde de color rojo y sombra.</h2>
+    <form id="elformulario">
+        <p><label for="nombre">Nombre:</label>
+        <input type="text"> </p>
+    
+        <p><label for="apellido">Apellido:</label>
+        <input type="text"></p>
+        
+        <p><label for="edad">Edad:</label>
+        <input type="number"></p>
+            
+        <p><label for="Correo">Correo:</label>
+        <input type="email"></p>
+
+        <p><label for="Contraseña">Contraseña:</label>
+        <input type="password"></p>
+    
+    <button type="button" onclick="destacarInputs()">Destacar input text</button>
+    </form>
+
+<h2>H. Eliminar todos los "li" de una lista "ol" al hacer click en un botón. Con otro botón agregar una cantidad aleatoria entre 1 y 1000 de "li" con valores aleatorios.</h2>
+    
+    <button onclick="eliminarElementos()">Eliminar elementos</button>
+    <button onclick="agregarElementos()">Agregar elementos aleatorios</button>
+    <ol id="lalistaH">
+        <li>Al tocar el primer boton llamado "Eliminar elementos" se eliminaran todos los "li" de esta lista</li>
+        <li>Y altocar el segundo boton llamado "Agregar elementos aleatorios" se agregaran una cantidad aleatoria entre 1 y 1000 de "li" con valores aleatorios a la lista.🧙‍♂️🧮</li>
+    </ol>
+
+</div> 
+<script src="scripts.js"></script>
+</body>
+</html>
+<script>
+/* Js A*/
+    var parrafos = document.getElementById('parrafos');
+     
+    function cambiarTexto(){
+        document.getElementById("parrafos").innerText = "Texto cambiado ...";
+    }
+    
+/* Js B*/
+    function cambiarColor() {
+        document.getElementById("eldiv").style.backgroundColor = "cornflowerblue";
+    }
+
+    function restaurarColor() {
+        document.getElementById("eldiv").style.backgroundColor = "gold";
+    }
+
+/* Js C*/
+    function anadirElemento() {
+        var li = document.createElement("li");
+        li.innerText = "🍊🍋🥭";
+        document.getElementById("lalista").appendChild(li);
+    }
+
+/* Js D*/
+    function modificarParrafoD() {
+        var p = document.getElementById("parrafosD");
+
+        if (p.style.display === "none") {
+            p.style.display = "block";
+        } else {
+            p.style.display = "none";
+        }
+    }
+
+
+/*Js E*/
+    function actualizarInput() {
+        var contenido = document.getElementById("parrafosE").innerText;
+        document.getElementById("elinput").value = contenido;
+    }
+
+/*Js F*/
+    function mostrarURLs() {
+        var capa = document.getElementById("lacapa");
+        var imagenes = capa.getElementsByTagName("img");
+
+        for (let img of imagenes) {
+            alert(img.src);
+        }
+    }
+
+
+/*Js G*/
+    function destacarInputs() {
+        var inputs = document.querySelectorAll("#elformulario input[type='text']");
+
+        for (let input of inputs) {
+            input.classList.add("destacado");
+        }
+    }
+
+
+/*Js H*/
+    function eliminarElementos() {
+        document.getElementById("lalistaH").innerHTML = "";
+    }
+
+    function agregarElementos() {
+        var lista = document.getElementById("lalistaH");
+        var cantidad = Math.floor(Math.random() * 1000) + 1;
+        
+        for (let i = 0; i < cantidad; i++) {
+            var li = document.createElement("li");
+            li.innerText = Math.floor(Math.random() * 1000);
+            lista.appendChild(li);
+        }
+    }
+</script>

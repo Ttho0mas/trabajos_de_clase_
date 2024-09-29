@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej promesa con pokeapi</title>
+    <style>
+        body{
+            background-image: url('https://www.mundodeportivo.com/alfabeta/hero/2021/07/pokemon-1.jpg?width=1200'); 
+            
+        }
+    </style>
+<script>
+
+function Pokedes(url) {
+  return new Promise((resolver, rechasar) => {
+    fetch(url)
+      .then(respuesta => {
+        if (!respuesta.ok) {
+          throw new Error('URL ivalida,pokémon no encontrado');
+        }
+        return respuesta.json();
+      })
+      .then(data => {
+        resolver(data);
+      })
+      .catch(error => {
+        rechasar(error.message);
+      });
+  });
+}
+
+const url = prompt("Ingrese la URL de la PokeAPI"); 
+
+Pokedes(url)
+  .then(data => {
+    console.log(data);
+    document.body.textContent = JSON.stringify(data);
+  })
+  .catch(error => {
+
+    console.error(error);
+    document.body.textContent = " URL ivalida,no se a encontrado el pokémon :(";
+  });
+</script>
+</head>
+<body>
+    
+</body>
+</html> 
